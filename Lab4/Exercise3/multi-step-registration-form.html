@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Multi Step Registration Form</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:40px;
+}
+
+form{
+width:420px;
+}
+
+.step{
+display:none;
+}
+
+.step.active{
+display:block;
+}
+
+button{
+margin-top:20px;
+padding:8px 15px;
+}
+
+/* progress bar */
+
+.progress{
+width:100%;
+height:10px;
+background:#ddd;
+margin-bottom:20px;
+}
+
+.progress-bar{
+height:10px;
+width:33%;
+background:green;
+transition:0.3s;
+}
+
+.error{
+color:red;
+font-size:13px;
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Đăng ký tài khoản</h2>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<form id="form">
+
+<!-- STEP 1 -->
+
+<div class="step active" id="step1">
+
+<h3>Bước 1 – Thông tin cá nhân</h3>
+
+<label>Họ tên</label>
+<input id="fullname">
+<span class="error" id="nameError"></span>
+
+<label>Ngày sinh</label>
+<input type="date" id="birth">
+
+<label>Giới tính</label>
+<input type="radio" name="gender" value="Nam"> Nam
+<input type="radio" name="gender" value="Nữ"> Nữ
+<span class="error" id="genderError"></span>
+
+<button type="button" id="next1">Tiếp theo</button>
+
+</div>
+
+
+<!-- STEP 2 -->
+
+<div class="step" id="step2">
+
+<h3>Bước 2 – Thông tin tài khoản</h3>
+
+<label>Email</label>
+<input id="email">
+<span class="error" id="emailError"></span>
+
+<label>Mật khẩu</label>
+<input type="password" id="password">
+<span class="error" id="passError"></span>
+
+<label>Xác nhận mật khẩu</label>
+<input type="password" id="confirm">
+<span class="error" id="confirmError"></span>
+
+<button type="button" id="back1">Quay lại</button>
+<button type="button" id="next2">Tiếp theo</button>
+
+</div>
+
+
+<!-- STEP 3 -->
+
+<div class="step" id="step3">
+
+<h3>Bước 3 – Xác nhận</h3>
+
+<div id="summary"></div>
+
+<button type="button" id="back2">Quay lại</button>
+<button type="submit">Hoàn tất</button>
+
+</div>
+
+</form>
+
+<script src="script1.js"></script>
+
+</body>
+</html>

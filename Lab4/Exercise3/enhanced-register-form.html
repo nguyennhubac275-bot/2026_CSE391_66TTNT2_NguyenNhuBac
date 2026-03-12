@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Enhanced Register Form</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:40px;
+}
+
+form{
+width:400px;
+}
+
+label{
+display:block;
+margin-top:15px;
+}
+
+input{
+width:100%;
+padding:8px;
+margin-top:5px;
+}
+
+.error{
+color:red;
+font-size:13px;
+display:none;
+}
+
+.success{
+border:2px solid green;
+}
+
+.invalid{
+border:2px solid red;
+}
+
+/* password strength bar */
+
+#strengthBar{
+height:8px;
+width:100%;
+background:#ddd;
+margin-top:5px;
+}
+
+#strengthLevel{
+height:8px;
+width:0%;
+}
+
+.weak{background:red}
+.medium{background:orange}
+.strong{background:green}
+
+/* toggle icon */
+
+.password-box{
+position:relative;
+}
+
+.toggle{
+position:absolute;
+right:10px;
+top:10px;
+cursor:pointer;
+}
+
+#nameCount{
+font-size:13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Đăng Ký Tài Khoản</h2>
+
+<form id="registerForm">
+
+<label>Họ và tên</label>
+<input id="fullname" maxlength="50">
+<div id="nameCount">0 / 50</div>
+<span class="error" id="fullnameError"></span>
+
+<label>Email</label>
+<input id="email">
+<span class="error" id="emailError"></span>
+
+<label>Số điện thoại</label>
+<input id="phone">
+<span class="error" id="phoneError"></span>
+
+<label>Mật khẩu</label>
+
+<div class="password-box">
+<input type="password" id="password">
+<span class="toggle" id="togglePassword">👁</span>
+</div>
+
+<div id="strengthBar">
+<div id="strengthLevel"></div>
+</div>
+
+<span class="error" id="passwordError"></span>
+
+<label>Xác nhận mật khẩu</label>
+<input type="password" id="confirmPassword">
+<span class="error" id="confirmPasswordError"></span>
+
+<br>
+
+<button type="submit">Đăng ký</button>
+
+</form>
+
+<div id="successMessage"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
