@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quản lý sinh viên</title>
+
+<style>
+body{
+font-family: Arial;
+padding:30px;
+}
+
+input,select,button{
+padding:6px;
+margin-right:10px;
+}
+
+table{
+border-collapse:collapse;
+width:650px;
+margin-top:20px;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:8px;
+text-align:center;
+}
+
+th{
+background:#eee;
+cursor:pointer;
+}
+
+.low{
+background:yellow;
+}
+
+#noResult{
+color:red;
+margin-top:10px;
+display:none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Bảng Điểm Sinh Viên</h2>
+
+<input id="name" placeholder="Họ tên">
+<input id="score" type="number" placeholder="Điểm">
+<button id="addBtn">Thêm</button>
+
+<br><br>
+
+<input id="search" placeholder="Tìm kiếm tên...">
+
+<select id="filter">
+<option value="all">Tất cả</option>
+<option value="Giỏi">Giỏi</option>
+<option value="Khá">Khá</option>
+<option value="Trung bình">Trung bình</option>
+<option value="Yếu">Yếu</option>
+</select>
+
+<table>
+
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th id="scoreHeader">Điểm</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+
+</table>
+
+<div id="noResult">Không có kết quả</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
